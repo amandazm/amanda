@@ -1,0 +1,47 @@
+<%= form_for(stripclub) do |f| %>
+  <% if stripclub.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stripclub.errors.count, "error") %> prohibited this stripclub from being saved:</h2>
+
+      <ul>
+      <% stripclub.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :female_dancers %>
+    <%= f.number_field :female_dancers %>
+  </div>
+
+  <div class="field">
+    <%= f.label :male_dancers %>
+    <%= f.number_field :male_dancers %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :music %>
+    <%= f.text_field :music %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
